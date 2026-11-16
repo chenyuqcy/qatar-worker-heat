@@ -1,0 +1,6 @@
+[
+  {"comparison": "setting", "label": "In the sun", "high": 22, "extreme": 33},
+  {"comparison": "setting", "label": "Indoors or in shade", "high": 11, "extreme": 1},
+  {"comparison": "clock", "label": "Daytime", "high": 13, "extreme": 18},
+  {"comparison": "clock", "label": "Nighttime", "high": 0, "extreme": 0}
+]
