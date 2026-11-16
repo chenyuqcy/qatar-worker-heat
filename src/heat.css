@@ -58,6 +58,7 @@ body {
 
 .figure-heading h2,
 .breaks-figure h2,
+.temperature-figure h2,
 .context h2 {
   margin: 0;
   font-size: 1.17rem;
@@ -203,6 +204,40 @@ body {
   font-size: 0.9rem;
 }
 
+.temperature-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--secondary);
+  font-size: 0.86rem;
+}
+
+.temperature-key li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.temperature-key span {
+  width: 1rem;
+  height: 0.6rem;
+}
+
+.temperature-key .key-median { height: 2px; background: var(--series); }
+.key-spread { background: #ccddeb; }
+.key-restriction { background: #f1e9d6; border: 1px solid #b59b70; }
+
+.temperature-chart {
+  width: 100%;
+  max-width: 47rem;
+  margin-top: 0.25rem;
+}
+
+.temperature-plot { display: block; max-width: 100%; }
+
 .break-comparison {
   --label-column: min(23vw, 12rem);
   --label-gap: 0.75rem;
@@ -281,9 +316,11 @@ a {
   font-size: 0.94rem;
 }
 
-.context details { margin-top: 0.7rem; }
+.context details,
+.temperature-values { margin-top: 0.7rem; }
 
-.context summary {
+.context summary,
+.temperature-values summary {
   width: fit-content;
   cursor: pointer;
   color: var(--series);
@@ -312,6 +349,7 @@ a {
 
 .data-table th:first-child { text-align: left; }
 .data-table tbody th { font-weight: 500; }
+.temperature-values .data-table { max-width: 29rem; }
 :focus-visible { outline: 2px solid var(--series); outline-offset: 3px; }
 
 @media (max-width: 720px) {
