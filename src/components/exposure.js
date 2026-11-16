@@ -8,30 +8,26 @@ export function exposureShare(row, category) {
 }
 
 export function exposurePanel(html, rows, category, {heading, comparison, labelGap}) {
-  const first = exposureShare(rows[0], category);
-  const second = exposureShare(rows[1], category);
-  return html`<section class="comparison-panel" aria-labelledby=${comparison + "-title"}>
-    <h3 id=${comparison + "-title"}>${heading}</h3>
+  const values = rows.map((row) => exposureShare(row, category));
+  const headingId = comparison + "-title";
+
+  return html`<section class="comparison-panel" aria-labelledby=${headingId}>
+    <h3 id=${headingId}>${heading}</h3>
     <ul class="chart-rows">
       ${rows.map((row, index) => {
-        const value = exposureShare(row, category);
+        const value = values[index];
+        const position = (value / axisMax) * 100 + "%";
         return html`<li class="chart-row">
           <span class="row-label">${row.label}</span>
           <span class="chart-track">
-            <span class="chart-dot ${index === 0 ? "higher" : "lower"}"
-              aria-hidden="true" style=${{left: (value / axisMax) * 100 + "%"}}></span>
-            <strong class="chart-value" style=${{left: (value / axisMax) * 100 + "%"}}>${value}%</strong>
+            <span class="chart-point" style=${{left: position}}>${value}%</span>
           </span>
         </li>`;
       })}
     </ul>
     <div class="tick-row" aria-hidden="true">
-      ${ticks.map((tick) => html`<span>${tick}%</span>`)}
+      ${ticks.map((tick) => html`<span style=${{left: (tick / axisMax) * 100 + "%"}}>${tick}%</span>`)}
     </div>
-    <p class="panel-note ${labelGap ? "gap-note" : ""}">
-      ${labelGap
-        ? html`<strong>${first - second} percentage points</strong> more in the sun than indoors or in shade.`
-        : html`The study reported ${second}% at night, rounded to a whole percentage.`}
-    </p>
+    ${labelGap ? html`<p class="gap-note"><strong>${values[0] - values[1]} percentage points</strong> higher in the sun.</p>` : null}
   </section>`;
 }
