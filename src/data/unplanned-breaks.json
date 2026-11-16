@@ -1,0 +1,6 @@
+[
+  {"group": "regular", "site": "Construction", "hours": "00:00–11:00", "share": 62},
+  {"group": "regular", "site": "Construction", "hours": "15:30–02:30 (next day)", "share": 63},
+  {"group": "regular", "site": "Farm", "hours": "04:30–11:00", "share": 23},
+  {"group": "pilot", "site": "Construction", "hours": "06:00–17:00", "share": 42}
+]

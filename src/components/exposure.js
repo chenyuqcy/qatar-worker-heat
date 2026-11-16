@@ -7,7 +7,7 @@ export function exposureShare(row, category) {
   return category === "Extreme only" ? row.extreme : row.high + row.extreme;
 }
 
-export function exposurePanel(html, rows, category, {heading, comparison, labelGap}) {
+export function exposurePanel(html, rows, category, {heading, comparison, labelGap = false, note}) {
   const values = rows.map((row) => exposureShare(row, category));
   const headingId = comparison + "-title";
 
@@ -20,7 +20,7 @@ export function exposurePanel(html, rows, category, {heading, comparison, labelG
         return html`<li class="chart-row">
           <span class="row-label">${row.label}</span>
           <span class="chart-track">
-            <span class="chart-point" style=${{left: position}}>${value}%</span>
+            <span class="chart-point" style=${{left: position}}>${value}%${value === 0 ? html` <span class="value-note">(rounded)</span>` : null}</span>
           </span>
         </li>`;
       })}
@@ -29,5 +29,6 @@ export function exposurePanel(html, rows, category, {heading, comparison, labelG
       ${ticks.map((tick) => html`<span style=${{left: (tick / axisMax) * 100 + "%"}}>${tick}%</span>`)}
     </div>
     ${labelGap ? html`<p class="gap-note"><strong>${values[0] - values[1]} percentage points</strong> higher in the sun.</p>` : null}
+    ${note ? html`<p class="figure-note">${note}</p>` : null}
   </section>`;
 }

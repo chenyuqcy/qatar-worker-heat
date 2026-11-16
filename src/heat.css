@@ -57,6 +57,7 @@ body {
 }
 
 .figure-heading h2,
+.breaks-figure h2,
 .context h2 {
   margin: 0;
   font-size: 1.17rem;
@@ -106,19 +107,22 @@ body {
   padding-top: 0.6rem;
 }
 
-.comparison-panel h3 {
+.comparison-panel h3,
+.break-group h3 {
   margin: 0 0 0.55rem;
   font-size: 1rem;
   font-weight: 650;
 }
 
-.chart-rows {
+.chart-rows,
+.break-rows {
   list-style: none;
   padding: 0 var(--end-gutter) 0 0;
   margin: 0;
 }
 
-.chart-row {
+.chart-row,
+.break-row {
   display: grid;
   grid-template-columns: var(--label-column) minmax(0, 1fr);
   gap: var(--label-gap);
@@ -163,7 +167,8 @@ body {
   background: var(--series);
 }
 
-.tick-row {
+.tick-row,
+.break-axis {
   position: relative;
   height: 1.2rem;
   margin: 0.15rem var(--end-gutter) 0 calc(var(--label-column) + var(--label-gap));
@@ -172,7 +177,8 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-.tick-row span {
+.tick-row span,
+.break-axis span {
   position: absolute;
   transform: translateX(-50%);
 }
@@ -181,6 +187,74 @@ body {
   margin: 0.55rem 0 0;
   color: var(--series);
   font-size: 0.92rem;
+}
+
+.value-note {
+  color: var(--secondary);
+  font-size: 0.78rem;
+  font-weight: 400;
+}
+
+.figure-description,
+.figure-note {
+  max-width: 74ch;
+  margin: 0.45rem 0 0;
+  color: var(--secondary);
+  font-size: 0.9rem;
+}
+
+.break-comparison {
+  --label-column: min(23vw, 12rem);
+  --label-gap: 0.75rem;
+  --end-gutter: 1.25rem;
+  max-width: 46rem;
+  margin: 1rem 0 0.75rem;
+}
+
+.break-group-pilot {
+  margin-top: 0.65rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--rule);
+}
+
+.break-row { min-height: 2.65rem; }
+
+.break-label {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.break-site { font-size: 0.92rem; }
+
+.break-hours {
+  color: var(--secondary);
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.break-track {
+  position: relative;
+  height: 2.65rem;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, var(--guide) 1px, transparent 1px) left / 25% 100%;
+  border-right: 1px solid var(--guide);
+}
+
+.break-fill {
+  height: 0.65rem;
+  background: var(--series);
+}
+
+.break-group-pilot .break-fill { background: #6b7987; }
+
+.break-value {
+  position: absolute;
+  padding-inline-start: 0.42rem;
+  font-size: 0.91rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
 }
 
 .source {
@@ -251,4 +325,6 @@ a {
     gap: 1.2rem;
     margin-top: 0.9rem;
   }
+
+  .break-comparison { --label-column: 6.75rem; }
 }
