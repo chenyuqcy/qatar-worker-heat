@@ -73,9 +73,19 @@ const category = Generators.input(categoryControl);
 </section>
 
 <section class="takeaway" aria-labelledby="takeaway-title">
-  <h2 id="takeaway-title">What to check before crews go back outside</h2>
-  <p>Site supervisors should follow the summer schedule, check worksite WBGT before crews start or resume outdoor work, and make shaded rest areas and breaks easy to access throughout the shift.</p>
-  <p>The two-site study shows how much exposure and break time varied in practice. The Doha temperature profile shows why 15:30 alone tells you little about conditions a crew will face.</p>
+  <h2 id="takeaway-title">What workers need when outdoor work resumes</h2>
+  <p>The summer schedule sets when outdoor work is restricted. Once those hours end, workers still need someone to check the heat where they work, time and a place to cool down, and a clear way to stop if conditions become unsafe.</p>
+
+  <h3>Check the heat where the crew works</h3>
+  <p>The estimated median air temperature near Doha was 41.2°C at 16:00, half an hour after the restriction ended. Supervisors should check worksite WBGT before sending a crew back outside and keep monitoring as conditions change. WBGT accounts for local conditions such as humidity and radiant heat. Under Qatar’s 2021 decision, work must stop if worksite WBGT exceeds 32.1°C.</p>
+
+  <h3>Give workers time and a place to cool down</h3>
+  <p>The study found more high or extreme heat exposure in direct sun, and time spent on worker-initiated breaks varied across shifts. Employers should put shaded rest areas and cool drinking water within easy reach and plan breaks around the task and site conditions. Workers also need to be able to take an extra break when they need one.</p>
+
+  <h3>Make it clear how to stop and get help</h3>
+  <p>Before the shift, crews should know who to tell and where to go if they feel unwell. Qatar’s 2021 decision gives workers the right to stop and file a complaint when they have good reason to believe heat stress threatens their safety or health, with protection against dismissal or discrimination. Supervisors should explain this process during heat-stress training.</p>
+
+  <p class="source">Policy source: <a href="https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@arabstates/@ro-beirut/documents/legaldocument/wcms_794551.pdf#page=2">Qatar’s Ministerial Decision No. 17 of 2021, Articles 4 and 6</a>.</p>
 </section>
 
 <section class="context" aria-labelledby="study-context">

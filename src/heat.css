@@ -322,6 +322,14 @@ a {
   margin: 0.45rem 0 0;
 }
 
+.takeaway h3 {
+  margin: 1rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 650;
+}
+
+.takeaway .source { margin-top: 0.95rem; }
+
 .context {
   max-width: 65ch;
   margin-top: 1.65rem;
