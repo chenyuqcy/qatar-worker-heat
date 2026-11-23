@@ -7,7 +7,7 @@ import {riskCategories, exposureShare, exposurePanel} from "./components/exposur
 import {breakComparison} from "./components/breaks.js";
 import {summerTemperaturePlot} from "./components/temperature.js";
 
-const breaks = FileAttachment("./data/unplanned-breaks.json").json();
+const breaks = await FileAttachment("./data/unplanned-breaks.json").json();
 const observations = FileAttachment("./data/heat-exposure.json").json();
 const temperatureRows = await FileAttachment("./data/doha-hourly-temperature.json").json();
 const regularBreaks = breaks.filter(row => row.group === "regular");
