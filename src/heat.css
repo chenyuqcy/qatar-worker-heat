@@ -328,6 +328,7 @@ a {
   font-weight: 650;
 }
 
+.takeaway .key-takeaway,
 .takeaway .source { margin-top: 0.95rem; }
 
 .context {

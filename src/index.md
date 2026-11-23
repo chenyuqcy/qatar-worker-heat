@@ -73,17 +73,19 @@ const category = Generators.input(categoryControl);
 </section>
 
 <section class="takeaway" aria-labelledby="takeaway-title">
-  <h2 id="takeaway-title">What workers need when outdoor work resumes</h2>
-  <p>The summer schedule sets when outdoor work is restricted. Once those hours end, workers still need someone to check the heat where they work, time and a place to cool down, and a clear way to stop if conditions become unsafe.</p>
+  <h2 id="takeaway-title">Heat protection continues after 15:30</h2>
+  <p>At two sites in 2019, high or extreme heat stress accounted for 55% of observed time in direct sun and 12% indoors or in shade. Workers also took different amounts of break time across shifts. In a separate 2024 series near Doha, the estimated median air temperature was 41.2°C at 16:00. Together, these figures show why supervisors need to check both the heat where workers resume and the protections available to them during the shift.</p>
 
-  <h3>Check the heat where the crew works</h3>
-  <p>The estimated median air temperature near Doha was 41.2°C at 16:00, half an hour after the restriction ended. Supervisors should check worksite WBGT before sending a crew back outside and keep monitoring as conditions change. WBGT accounts for local conditions such as humidity and radiant heat. Under Qatar’s 2021 decision, work must stop if worksite WBGT exceeds 32.1°C.</p>
+  <h3>Measure conditions before and during outdoor work</h3>
+  <p>Supervisors should check worksite WBGT before sending a crew back outside and keep monitoring as conditions change. WBGT accounts for local conditions such as humidity and radiant heat. Under Qatar’s 2021 decision, work must stop if worksite WBGT exceeds 32.1°C.</p>
 
   <h3>Give workers time and a place to cool down</h3>
-  <p>The study found more high or extreme heat exposure in direct sun, and time spent on worker-initiated breaks varied across shifts. Employers should put shaded rest areas and cool drinking water within easy reach and plan breaks around the task and site conditions. Workers also need to be able to take an extra break when they need one.</p>
+  <p>Employers should put shaded rest areas and cool drinking water within easy reach and plan breaks around the task and site conditions. Ask crews whether they can reach shade and take an extra break during their actual shifts.</p>
 
   <h3>Make it clear how to stop and get help</h3>
   <p>Before the shift, crews should know who to tell and where to go if they feel unwell. Qatar’s 2021 decision gives workers the right to stop and file a complaint when they have good reason to believe heat stress threatens their safety or health, with protection against dismissal or discrimination. Supervisors should explain this process during heat-stress training.</p>
+
+  <p class="key-takeaway"><strong>Key takeaway.</strong> When the restricted hours end, check heat at the worksite and make shade, water and rest available throughout the shift. Give workers a clear way to stop and get help.</p>
 
   <p class="source">Policy source: <a href="https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@arabstates/@ro-beirut/documents/legaldocument/wcms_794551.pdf#page=2">Qatar’s Ministerial Decision No. 17 of 2021, Articles 4 and 6</a>.</p>
 </section>
