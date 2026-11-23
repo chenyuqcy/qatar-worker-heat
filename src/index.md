@@ -1,5 +1,5 @@
 ---
-title: Outdoor heat at work in Qatar
+title: When the Workday Is Still Hot
 ---
 
 ```js
@@ -10,6 +10,9 @@ import {summerTemperaturePlot} from "./components/temperature.js";
 const breaks = FileAttachment("./data/unplanned-breaks.json").json();
 const observations = FileAttachment("./data/heat-exposure.json").json();
 const temperatureRows = await FileAttachment("./data/doha-hourly-temperature.json").json();
+const regularBreaks = breaks.filter(row => row.group === "regular");
+const constructionBreaks = regularBreaks.filter(row => row.site === "Construction");
+const farmBreak = regularBreaks.find(row => row.site === "Farm");
 const peak = temperatureRows.reduce((a, b) => a.median >= b.median ? a : b);
 const at16 = temperatureRows.find(row => row.hour === 16);
 const localHourLabel = hour => String(hour).padStart(2, "0") + ":00";
@@ -18,13 +21,15 @@ const category = Generators.input(categoryControl);
 ```
 
 <header class="page-intro">
-  <h1>Outdoor heat at work in Qatar</h1>
-  <p>In summer 2019, a field study tracked heat exposure and work activity among 125 workers at a construction site and a farm.</p>
+  <h1>When the Workday Is Still Hot</h1>
+  <p>Qatar’s summer work restriction sets hours for covered outdoor work. What should employers check when a crew is scheduled to work outside those hours?</p>
 </header>
 
 <section class="exposure-figure" aria-labelledby="comparison-title">
+  <h2 id="comparison-title">Start with where people work</h2>
+  <p class="figure-description">In summer 2019, researchers followed 125 workers at a construction site and a farm in Qatar. Workers spent 55% of observed time in the sun under high or extreme heat stress, compared with 12% indoors or in shade.</p>
   <div class="figure-heading">
-    <h2 id="comparison-title">Share of shift time by heat stress level</h2>
+    <p class="figure-label">Share of observed time by heat stress level</p>
     <div class="metric-control">${categoryControl}</div>
   </div>
   <div class="comparison-grid">
@@ -35,8 +40,9 @@ const category = Generators.input(categoryControl);
 </section>
 
 <section class="exposure-figure temperature-figure" aria-labelledby="temperature-title">
-  <h2 id="temperature-title">Hourly air temperature near Doha</h2>
-  <p class="figure-description">June 1 through September 15, 2024. Each hour summarizes 107 days of NASA POWER air temperature estimates near central Doha.</p>
+  <h2 id="temperature-title">Check conditions when work resumes</h2>
+  <p class="figure-description">The 2019 field study shows how exposure can vary by setting and time. A separate set of 2024 estimates near Doha shows what air temperatures can look like after the restricted hours end.</p>
+  <p class="figure-label">Hourly air temperature near Doha, June 1–September 15, 2024</p>
   <ul class="temperature-key" aria-label="Chart key">
     <li><span class="key-median" aria-hidden="true"></span>Hourly median</li>
     <li><span class="key-spread" aria-hidden="true"></span>10th to 90th percentile</li>
@@ -44,7 +50,7 @@ const category = Generators.input(categoryControl);
   </ul>
   <div class="temperature-chart">${resize(width => summerTemperaturePlot(Plot, temperatureRows, {width}))}</div>
   <p class="gap-note">The median reached <strong>${peak.median.toFixed(1)}°C at ${localHourLabel(peak.hour)}</strong> and was <strong>${at16.median.toFixed(1)}°C at 16:00</strong>, the first plotted hour after the restriction ends.</p>
-  <p class="figure-note">Qatar’s 2021 decision restricts covered outdoor work from 10:00 to 15:30, June 1 through September 15. This chart shows air temperature. The separate stop-work rule applies when worksite WBGT exceeds 32.1°C.</p>
+  <p class="figure-note">Each hour summarizes 107 days of NASA POWER air temperature estimates. Qatar’s 2021 decision restricts covered outdoor work from 10:00 to 15:30, June 1 through September 15. The separate stop-work rule applies when worksite WBGT exceeds 32.1°C.</p>
   <details class="temperature-values">
     <summary>View hourly temperature values</summary>
     <table class="data-table">
@@ -57,11 +63,19 @@ const category = Generators.input(categoryControl);
 </section>
 
 <section class="exposure-figure breaks-figure" aria-labelledby="breaks-title">
-  <h2 id="breaks-title">Unplanned breaks by shift</h2>
-  <p class="figure-description">Share of observed shift time spent on worker-initiated breaks. Scheduled breaks such as meals are excluded.</p>
+  <h2 id="breaks-title">Make room for breaks during the shift</h2>
+  <p class="figure-label">Share of observed shift time spent on unplanned breaks</p>
+  <p class="figure-description">The 2019 field study counted worker-initiated breaks separately from scheduled breaks such as meals.</p>
   ${breakComparison(html, breaks)}
+  <p class="gap-note">Workers took unplanned breaks for <strong>${constructionBreaks.map(row => row.share + "%").join(" and ")}</strong> of the two regular construction shifts, compared with <strong>${farmBreak.share}%</strong> of the farm shift.</p>
   <p class="figure-note">Shift hours are local. The sites differed in tasks, schedules, and heat protections. The pilot ran under a research exemption that required specific precautions.</p>
   <p class="source">Source: Flouris et al. (2019), FAME Laboratory. <a href="https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@arabstates/@ro-beirut/documents/publication/wcms_723545.pdf#page=7">Table e3, page 6</a>.</p>
+</section>
+
+<section class="takeaway" aria-labelledby="takeaway-title">
+  <h2 id="takeaway-title">What to check before crews go back outside</h2>
+  <p>Site supervisors should follow the summer schedule, check worksite WBGT before crews start or resume outdoor work, and make shaded rest areas and breaks easy to access throughout the shift.</p>
+  <p>The two-site study shows how much exposure and break time varied in practice. The Doha temperature profile shows why 15:30 alone tells you little about conditions a crew will face.</p>
 </section>
 
 <section class="context" aria-labelledby="study-context">

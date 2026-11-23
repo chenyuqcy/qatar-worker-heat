@@ -1,5 +1,5 @@
 export default {
-  title: "Outdoor heat at work in Qatar",
+  title: "When the Workday Is Still Hot",
   root: "src",
   style: "heat.css",
   sidebar: false,
